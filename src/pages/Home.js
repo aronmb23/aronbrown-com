@@ -11,7 +11,7 @@ export function Home() {
           </h1>
           
           <p class="mt-6 text-lg text-slate-400 leading-relaxed max-w-xl">
-            I’m Aron, a builder who lives somewhere between automation, data,
+            I’m Aron, a builder who lives somewhere between automation, data, AI, Apps
             and creative problem solving. I turn messy, manual processes
             into calm, reliable solutions.
           </p>

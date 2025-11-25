@@ -22,22 +22,25 @@ export function About() {
         </p>
       </div>
 
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center hover:border-sky-500/30 transition-colors">
+      <div class="mt-16">
+        <h3 class="text-xl font-bold text-white mb-6">Interests</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-center">
             <div class="text-2xl mb-2">🤖</div>
             <div class="text-sm font-medium text-slate-300">Automation</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center hover:border-sky-500/30 transition-colors">
+          </div>
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-center">
             <div class="text-2xl mb-2">📊</div>
             <div class="text-sm font-medium text-slate-300">Data Viz</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center hover:border-sky-500/30 transition-colors">
+          </div>
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-center">
             <div class="text-2xl mb-2">🖨️</div>
             <div class="text-sm font-medium text-slate-300">3D Printing</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center hover:border-sky-500/30 transition-colors">
+          </div>
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-center">
             <div class="text-2xl mb-2">🌱</div>
             <div class="text-sm font-medium text-slate-300">Gardening</div>
+          </div>
         </div>
       </div>
     </section>

@@ -27,6 +27,7 @@ export function Header() {
           <button class="nav-link px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all duration-200" data-page="about">About</button>
           <button class="nav-link px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all duration-200" data-page="work">Work</button>
           <button class="nav-link px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all duration-200" data-page="projects">Projects</button>
+          <button class="nav-link px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all duration-200" data-page="rpa">RPA Playground</button>
           <button class="nav-link px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all duration-200" data-page="contact">Contact</button>
         </div>
 
@@ -50,6 +51,7 @@ export function Header() {
         <button class="mobile-nav-link text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors" data-page="about">About</button>
         <button class="mobile-nav-link text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors" data-page="work">Work</button>
         <button class="mobile-nav-link text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors" data-page="projects">Projects</button>
+        <button class="mobile-nav-link text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors" data-page="rpa">RPA Playground</button>
         <button class="mobile-nav-link text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors" data-page="contact">Contact</button>
       </div>
     </header>
