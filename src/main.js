@@ -1,6 +1,7 @@
 import './style.css';
 import { Header, setupHeader } from './components/Header.js';
 import { Footer } from './components/Footer.js';
+import { SpotifyWidget, setupSpotifyWidget } from './components/SpotifyWidget.js';
 import { Home } from './pages/Home.js';
 import { About } from './pages/About.js';
 import { Work } from './pages/Work.js';
@@ -57,6 +58,7 @@ function render() {
         </div>
 
         <div class="relative z-10">
+            ${SpotifyWidget()}
             ${PageComponent()}
         </div>
       </main>
@@ -67,6 +69,7 @@ function render() {
 
   // Re-attach event listeners after render
   setupHeader(navigateTo);
+  setupSpotifyWidget();
 
   // Scroll to top on page change
   window.scrollTo(0, 0);
