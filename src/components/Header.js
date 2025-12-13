@@ -15,9 +15,6 @@ export function Header() {
             <div class="text-sm font-bold tracking-wide uppercase text-sky-400 transition-colors group-hover:text-sky-300">
               Aron Brown
             </div>
-            <div class="text-[10px] uppercase tracking-wider text-slate-400">
-              Power Platform Suite, Complete
-            </div>
           </div>
         </div>
 
