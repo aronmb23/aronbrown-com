@@ -81,11 +81,13 @@ export function InvoiceTable() {
       if (end >= totalItems) {
         nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
         nextBtn.disabled = true;
-        nextBtn.setAttribute('disabled', 'true');
+        nextBtn.setAttribute('disabled', 'disabled');
+        nextBtn.setAttribute('aria-disabled', 'true');
       } else {
         nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         nextBtn.disabled = false;
         nextBtn.removeAttribute('disabled');
+        nextBtn.removeAttribute('aria-disabled');
       }
     }
 
