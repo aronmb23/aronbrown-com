@@ -42,7 +42,7 @@ export function InvoiceTable() {
 
     let currentPage = 1;
     const itemsPerPage = 5;
-    const totalItems = 50; // Let's say 50 items total
+    const totalItems = 15;
     const allInvoices = generateInvoices(totalItems);
 
     function renderTable() {
