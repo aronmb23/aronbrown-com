@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logos, logoKeys } from './Logos.jsx';
+import { useAuth } from '../utils/AuthContext.jsx';
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -15,6 +16,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
   const location = useLocation();
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +54,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden gap-1 text-sm font-medium md:flex">
+        <div className="hidden gap-1 text-sm font-medium md:flex items-center">
           {navItems.map((item) => {
             const isActive = location.pathname === item.to ||
               (item.to !== '/' && location.pathname.startsWith(item.to));
@@ -70,6 +72,18 @@ export default function Header() {
               </Link>
             );
           })}
+          {!loading && (
+            <Link
+              to={user ? '/dashboard' : '/login'}
+              className={`ml-2 px-4 py-2 rounded-full transition-all duration-200 ${
+                location.pathname === '/login' || location.pathname === '/dashboard'
+                  ? 'text-white bg-gradient-to-r from-sky-500 to-indigo-500'
+                  : 'text-slate-300 border border-slate-700 hover:text-white hover:border-sky-500/50'
+              }`}
+            >
+              {user ? 'Dashboard' : 'Sign In'}
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -108,6 +122,14 @@ export default function Header() {
             {item.label}
           </Link>
         ))}
+        {!loading && (
+          <Link
+            to={user ? '/dashboard' : '/login'}
+            className="mt-4 px-6 py-3 rounded-full text-lg font-medium bg-gradient-to-r from-sky-500 to-indigo-500 text-white transition-all hover:from-sky-400 hover:to-indigo-400"
+          >
+            {user ? 'Dashboard' : 'Sign In'}
+          </Link>
+        )}
       </div>
     </header>
   );
