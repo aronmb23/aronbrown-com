@@ -5,9 +5,9 @@ export default function Home() {
     <section className="page max-w-6xl mx-auto px-6 py-20 md:py-32 animate-fade-in-up">
       <div className="grid gap-16 md:grid-cols-[1.5fr_1fr] md:items-center">
         <div className="relative z-10">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white leading-[1.1]">
+          <h1 className="text-5xl font-light tracking-tight sm:text-6xl lg:text-7xl text-white leading-[1.1] text-balance">
             I build solutions that make work{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-indigo-400 to-sky-400 animate-shimmer bg-[length:200%_auto] pr-2">
+            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-indigo-400 to-sky-400 animate-shimmer bg-[length:200%_auto] pr-2">
               flow.
             </span>
           </h1>
@@ -21,13 +21,13 @@ export default function Home() {
           <div className="mt-10 flex gap-4">
             <Link
               to="/work"
-              className="px-6 py-3 rounded-lg bg-sky-500 text-white font-medium hover:bg-sky-400 transition-colors shadow-lg shadow-sky-500/20"
+              className="btn-glow px-6 py-3 rounded-lg bg-sky-500 text-white font-medium hover:bg-sky-400 transition-colors shadow-lg shadow-sky-500/25"
             >
               See what I do
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-lg border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 transition-colors"
+              className="px-6 py-3 rounded-lg border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 hover:border-slate-600 transition-colors"
             >
               Get in touch
             </Link>
@@ -35,13 +35,16 @@ export default function Home() {
         </div>
 
         <div className="relative flex justify-center md:justify-end">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
-          <div className="absolute top-0 -right-4 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-200" />
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-400" />
+          {/* mesh gradient blobs */}
+          <div className="absolute -inset-8 z-0">
+            <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
+            <div className="absolute top-0 -right-4 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-200" />
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-400" />
+          </div>
 
-          <div className="relative z-10 group perspective-1000">
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-slate-900/50 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 group-hover:rotate-y-6 group-hover:rotate-x-6">
-              <div className="rounded-[1.5rem] overflow-hidden bg-slate-800 relative group/image">
+          <div className="relative z-10 group">
+            <div className="gradient-border relative overflow-hidden bg-slate-900/50 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500">
+              <div className="rounded-xl overflow-hidden bg-slate-800 relative group/image">
                 <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30 pointer-events-none" />
                 <img
                   src="/Profile.webp"
