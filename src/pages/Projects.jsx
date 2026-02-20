@@ -29,7 +29,7 @@ export default function Projects() {
   const headingRef = useScrollReveal();
 
   return (
-    <section className="page max-w-6xl mx-auto px-6 py-20 md:py-32 animate-fade-in-up">
+    <section className="page max-w-6xl mx-auto px-6 py-20 md:py-32">
       <div ref={headingRef} className="scroll-reveal max-w-2xl mb-16">
         <h2 className="text-4xl md:text-5xl font-light text-white mb-6 text-balance">
           Projects &amp; experiments

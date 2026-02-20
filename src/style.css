@@ -183,3 +183,37 @@
 .btn-glow:hover::after {
   opacity: 1;
 }
+
+/* ── Hide default cursor on desktop (custom cursor active) ──── */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ── Konami CRT scanline effect ───────────────────── */
+@keyframes crt-flicker {
+  0% { opacity: 0.04; }
+  50% { opacity: 0.08; }
+  100% { opacity: 0.04; }
+}
+
+.konami-crt {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: crt-flicker 0.1s infinite;
+}
+
+/* ── animation delay utilities ────────────────────── */
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4000ms;
+}
