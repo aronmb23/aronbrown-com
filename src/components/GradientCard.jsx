@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function GradientCard({ children, className = '', as: Tag = 'div', ...rest }) {
   const cardRef = useRef(null);
@@ -14,23 +15,37 @@ export default function GradientCard({ children, className = '', as: Tag = 'div'
     const rotateY = ((x - centerX) / centerX) * 4;
 
     setStyle({
-      transform: `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
       '--spotlight-x': `${x}px`,
       '--spotlight-y': `${y}px`,
+      rotateX,
+      rotateY,
     });
   }
 
   function handleMouseLeave() {
-    setStyle({ transform: 'perspective(800px) rotateX(0deg) rotateY(0deg)' });
+    setStyle({ rotateX: 0, rotateY: 0 });
   }
 
+  const MotionTag = motion.create(Tag);
+
   return (
-    <Tag
+    <MotionTag
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={style}
-      className={`gradient-border group relative bg-slate-900/60 backdrop-blur-sm transition-all duration-300 ${className}`}
+      animate={{
+        rotateX: style.rotateX || 0,
+        rotateY: style.rotateY || 0,
+      }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      style={{
+        perspective: 800,
+        '--spotlight-x': style['--spotlight-x'] || '50%',
+        '--spotlight-y': style['--spotlight-y'] || '50%',
+      }}
+      className={`gradient-border group relative bg-slate-900/60 backdrop-blur-sm ${className}`}
       {...rest}
     >
       {/* spotlight follow */}
@@ -41,6 +56,6 @@ export default function GradientCard({ children, className = '', as: Tag = 'div'
         }}
       />
       <div className="relative z-10">{children}</div>
-    </Tag>
+    </MotionTag>
   );
 }

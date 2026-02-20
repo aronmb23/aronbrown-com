@@ -13,7 +13,7 @@ export default function About() {
   const interestsRef = useScrollReveal();
 
   return (
-    <section className="page max-w-4xl mx-auto px-6 py-20 md:py-32 animate-fade-in-up">
+    <section className="page max-w-4xl mx-auto px-6 py-20 md:py-32">
       <div ref={headingRef} className="scroll-reveal">
         <h2 className="text-4xl md:text-5xl font-light text-white mb-8 text-balance">
           About me

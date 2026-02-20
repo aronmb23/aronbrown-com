@@ -23,6 +23,7 @@ import PopupMinefield from './pages/rpa/PopupMinefield.jsx';
 import IframeInception from './pages/rpa/IframeInception.jsx';
 import DragDrop from './pages/rpa/DragDrop.jsx';
 import TwoFASprint from './pages/rpa/TwoFASprint.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 ReactDOM.createRoot(document.getElementById('app')).render(
   <React.StrictMode>
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById('app')).render(
               <Route path="/rpa/iframe-inception" element={<IframeInception />} />
               <Route path="/rpa/drag-drop" element={<DragDrop />} />
               <Route path="/rpa/2fa-sprint" element={<TwoFASprint />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </AuthProvider>
