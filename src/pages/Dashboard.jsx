@@ -47,6 +47,12 @@ const quickLinks = [
 export default function Dashboard() {
   const { user, logout } = useAuth();
 
+  const displayName =
+    user?.user_metadata?.full_name ||
+    user?.user_metadata?.name ||
+    user?.email ||
+    'User';
+
   return (
     <section className="page max-w-5xl mx-auto px-6 py-20 md:py-32 animate-fade-in-up">
       {/* Welcome Banner */}
@@ -57,7 +63,7 @@ export default function Dashboard() {
           <div>
             <p className="text-sm font-medium text-sky-400 mb-1">Welcome back</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white">
-              {user}
+              {displayName}
             </h1>
             <p className="mt-2 text-slate-400 text-sm max-w-lg">
               You're signed in. Use the links below to navigate, or explore the site from here.
@@ -105,8 +111,8 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold text-slate-200 mb-4">Account</h2>
         <div className="space-y-4">
           <div className="flex items-center justify-between py-3 border-b border-slate-800">
-            <span className="text-sm text-slate-400">Username</span>
-            <span className="text-sm font-medium text-slate-200">{user}</span>
+            <span className="text-sm text-slate-400">Email</span>
+            <span className="text-sm font-medium text-slate-200">{user?.email}</span>
           </div>
           <div className="flex items-center justify-between py-3 border-b border-slate-800">
             <span className="text-sm text-slate-400">Status</span>
@@ -116,8 +122,10 @@ export default function Dashboard() {
             </span>
           </div>
           <div className="flex items-center justify-between py-3">
-            <span className="text-sm text-slate-400">Session</span>
-            <span className="text-sm text-slate-400">Authenticated</span>
+            <span className="text-sm text-slate-400">Email verified</span>
+            <span className="text-sm text-slate-400">
+              {user?.email_confirmed_at ? 'Yes' : 'Pending'}
+            </span>
           </div>
         </div>
       </div>
